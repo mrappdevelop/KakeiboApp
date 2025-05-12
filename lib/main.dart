@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kakeibo/view/second_screen.dart';
 
 void main() {
-  runApp(const KakeiboApp());
+  runApp(
+    const ProviderScope(
+      child: KakeiboApp()
+    ),
+  );
 }
 
 final goRouter = GoRouter(
@@ -72,81 +78,6 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ));
-  }
-}
-
-class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Kakeibo App'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('メールアドレス'),
-            TextField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                hintText: 'aaa@bbb.com',
-                hintStyle: TextStyle(color: Colors.grey.shade400),
-              ),
-              maxLines: 1,
-              maxLength: 100,
-              buildCounter: (_,
-                      {required currentLength,
-                      required isFocused,
-                      required maxLength}) =>
-                  null,
-            ),
-            Text('パスワード'),
-            TextField(
-              keyboardType: TextInputType.text,
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: 'abcd1234',
-                hintStyle: TextStyle(color: Colors.grey.shade400),
-              ),
-              maxLines: 1,
-              maxLength: 30,
-              buildCounter: (_,
-                      {required currentLength,
-                      required isFocused,
-                      required maxLength}) =>
-                  null,
-            ),
-            Text('生年月日'),
-            TextField(
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(
-                hintText: '2000年12月31日',
-                hintStyle: TextStyle(color: Colors.grey.shade400),
-              ),
-              maxLines: 1,
-              maxLength: 14,
-              buildCounter: (_,
-                      {required currentLength,
-                      required isFocused,
-                      required maxLength}) =>
-                  null,
-            ),
-            Checkbox(value: false, onChanged: (value) {}),
-            Text('利用規約に同意します'),
-            ElevatedButton(
-              onPressed: () {
-                goRouter.push('/fourth');
-              },
-              child: Text('登録'),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
 
