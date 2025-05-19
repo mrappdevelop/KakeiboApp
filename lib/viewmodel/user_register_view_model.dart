@@ -1,18 +1,18 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:kakeibo/model/second_model.dart';
+import 'package:kakeibo/model/user_register_model.dart';
 import 'package:kakeibo/main.dart';
 
-part 'second_view_model.g.dart';
+part 'user_register_view_model.g.dart';
 
 @riverpod
-class SecondViewModel extends _$SecondViewModel {
+class UserRegisterViewModel extends _$UserRegisterViewModel {
   @override
-  SecondModel build() {
-    return SecondModel(email: '', password: '', birthday: '');
+  UserRegisterModel build() {
+    return UserRegisterModel(email: '', password: '', birthday: '');
   }
 
   void updateEmail(String value) {
-    state = SecondModel(
+    state = UserRegisterModel(
       email: value,
       password: state.password,
       birthday: state.birthday,
@@ -20,7 +20,7 @@ class SecondViewModel extends _$SecondViewModel {
   }
 
   void updatePassword(String value) {
-    state = SecondModel(
+    state = UserRegisterModel(
       email: state.email,
       password: value,
       birthday: state.birthday,
@@ -28,7 +28,7 @@ class SecondViewModel extends _$SecondViewModel {
   }
 
   void updateBirthday(String value) {
-    state = SecondModel(
+    state = UserRegisterModel(
       email: state.email,
       password: state.password,
       birthday: value,

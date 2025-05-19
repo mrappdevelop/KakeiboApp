@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kakeibo/viewmodel/second_view_model.dart';
+import 'package:kakeibo/viewmodel/user_register_view_model.dart';
 
-class SecondScreen extends ConsumerWidget {
-  const SecondScreen({super.key});
+class UserRegisterScreen extends ConsumerWidget {
+  const UserRegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(secondViewModelProvider);
-    final viewModel = ref.read(secondViewModelProvider.notifier);
+    final model = ref.watch(userRegisterViewModelProvider);
+    final viewModel = ref.read(userRegisterViewModelProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kakeibo/view/second_screen.dart';
+import 'package:kakeibo/view/user_register_screen.dart';
 
 void main() {
   runApp(
@@ -16,19 +16,19 @@ final goRouter = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (BuildContext context, GoRouterState state) => HomeScreen(),
+      builder: (BuildContext context, GoRouterState state) => StartScreen(),
     ),
     GoRoute(
       path: '/second',
-      builder: (BuildContext context, GoRouterState state) => SecondScreen(),
+      builder: (BuildContext context, GoRouterState state) => UserRegisterScreen(),
     ),
     GoRoute(
       path: '/third',
-      builder: (BuildContext context, GoRouterState state) => ThirdScreen(),
+      builder: (BuildContext context, GoRouterState state) => LoginScreen(),
     ),
     GoRoute(
       path: '/fourth',
-      builder: (BuildContext context, GoRouterState state) => FourthScreen(),
+      builder: (BuildContext context, GoRouterState state) => DetailScreen(),
     ),
   ],
 );
@@ -49,8 +49,8 @@ class KakeiboApp extends StatelessWidget {
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class StartScreen extends StatelessWidget {
+  const StartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -81,8 +81,8 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class ThirdScreen extends StatelessWidget {
-  const ThirdScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -139,8 +139,8 @@ class ThirdScreen extends StatelessWidget {
   }
 }
 
-class FourthScreen extends StatelessWidget {
-  const FourthScreen({super.key});
+class DetailScreen extends StatelessWidget {
+  const DetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
