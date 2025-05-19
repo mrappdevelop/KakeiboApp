@@ -43,6 +43,6 @@ class UserRegisterViewModel extends _$UserRegisterViewModel {
 
     print('ユーザー登録: ${state.email}, ${state.password}, ${state.birthday}');
 
-    goRouter.push('/fourth');
+    goRouter.push('/detail');
   }
 }
